@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ MagicKanban - Sergi Ayet</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2rem;
+            background: linear-gradient(90deg, #f093fb, #f5576c, #4facfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .stat {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .stat strong { color: #f093fb; }
+        .kanban {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .column {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 20px;
+        }
+        .column h2 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid;
+        }
+        .ideas h2 { border-color: #ffd93d; color: #ffd93d; }
+        .progreso h2 { border-color: #6bcb77; color: #6bcb77; }
+        .testing h2 { border-color: #4d96ff; color: #4d96ff; }
+        .hecho h2 { border-color: #ff6b6b; color: #ff6b6b; }
+        .card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 12px;
+            transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-2px); }
+        .card h3 { font-size: 1rem; margin-bottom: 8px; }
+        .card p { font-size: 0.85rem; opacity: 0.7; }
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin-top: 10px;
+        }
+        .tag-magic { background: rgba(240,147,251,0.3); color: #f093fb; }
+        .tag-trabajo { background: rgba(107,203,119,0.3); color: #6bcb77; }
+        .tag-marketing { background: rgba(79,172,254,0.3); color: #4facfe; }
+        .tag-eventos { background: rgba(255,217,61,0.3); color: #ffd93d; }
+        .tag-personal { background: rgba(255,107,107,0.3); color: #ff6b6b; }
+        .tag-web { background: rgba(166,173,255,0.3); color: #a6adff; }
+        .tag-app { background: rgba(255,165,2,0.3); color: #ffa502; }
+        
+        .quick-actions {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 5px;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            border-radius: 25px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        .btn:hover { transform: translateY(-2px); }
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        @media (max-width: 600px) {
+            .kanban { grid-template-columns: 1fr; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>✨ MagicKanban - Sergi Ayet</h1>
+        <div class="stats-bar">
+            <div class="stat">📊 Total: <strong id="total">0</strong></div>
+            <div class="stat">💡 Ideas: <strong id="ideasCount">0</strong></div>
+            <div class="stat">🚀 Progreso: <strong id="progresoCount">0</strong></div>
+            <div class="stat">🧪 Testing: <strong id="testingCount">0</strong></div>
+            <div class="stat">✅ Hecho: <strong id="doneCount">0</strong></div>
+        </div>
+    </div>
+    
+    <div class="quick-actions">
+        <h3>🎯 Acciones Rápidas</h3>
+        <br>
+        <a href="magic-kanban.html" class="btn">📋 Kanban Completo</a>
+        <a href="demo-corporativo.html" class="btn btn-secondary">🎬 Demo Videos</a>
+        <a href="mwc_linkedin.html" class="btn btn-secondary">💼 MWC LinkedIn</a>
+        <a href="carta_vintage.pdf" class="btn btn-secondary">📄 CV Vintage</a>
+    </div>
+    
+    <div class="kanban">
+        <div class="column ideas">
+            <h2>💡 Ideas</h2>
+            <div id="ideas"></div>
+        </div>
+        <div class="column progreso">
+            <h2>🚀 En Progreso</h2>
+            <div id="progreso"></div>
+        </div>
+        <div class="column testing">
+            <h2>🧪 Testing</h2>
+            <div id="testing"></div>
+        </div>
+        <div class="column hecho">
+            <h2>✅ Hecho</h2>
+            <div id="hecho"></div>
+        </div>
+    </div>
+
+    <script>
+        // MagicKanban Data
+        const cards = [
+            { id: 1, title: '🎪 Mobile World Congress', desc: 'Febrero Barcelona - Gran feria tech', tag: 'eventos', column: 'ideas' },
+            { id: 2, title: '🎪 Fitur', desc: 'Enero Madrid - Feria turismo', tag: 'eventos', column: 'ideas' },
+            { id: 3, title: '📱 Contenido TikTok viral', desc: 'Hacks de magia para TikTok', tag: 'marketing', column: 'ideas' },
+            { id: 4, title: '🕸️ Migrar webs a Nominalia', desc: 'sermagic.com + impactomagico.com', tag: 'web', column: 'progreso' },
+            { id: 5, title: '📩 Carta hoteles mejorada', desc: 'Con prueba social y fotos', tag: 'marketing', column: 'progreso' },
+            { id: 6, title: '📧 Campaña agencias', desc: 'CPC, Art Factory, 4U Artists, ShowTime...', tag: 'trabajo', column: 'progreso' },
+            { id: 7, title: '📸 Photoshoot portfolio', desc: 'Vestuario: traje oscuro, props', tag: 'personal', column: 'progreso' },
+            { id: 8, title: '🔐 Configurar SSH AWS', desc: 'Configurar clave SSH para acceder a servidor EC2', tag: 'trabajo', column: 'progreso' },
+            { id: 9, title: '🎬 Grabar videos demo', desc: '3-5 videos de 2-3 min para portfolio', tag: 'personal', column: 'testing' },
+            { id: 10, title: '📈 Estrategia Instagram', desc: '3-4 Reels/semana, stories diarios', tag: 'marketing', column: 'testing' },
+            { id: 11, title: '✨ Conexión Telegram', desc: 'Magicbot funcionando en Telegram', tag: 'magic', column: 'hecho' },
+            { id: 12, title: '📋 ManagerKanban creado', desc: 'Gestión general de proyectos', tag: 'trabajo', column: 'hecho' },
+            { id: 13, title: '🔗 MagicBridge operativo', desc: 'Bridge de comunicación bots en puerto 8081', tag: 'magic', column: 'hecho' },
+            { id: 14, title: '🎨 MagicKanban AWS', desc: 'Kanban operativo en puerto 8080', tag: 'app', column: 'hecho' },
+            { id: 15, title: '📄 CV Vintage PDF', desc: 'Diseño vintage elegante 4 páginas para empresas MWC', tag: 'trabajo', column: 'hecho' }
+        ];
+
+        function getTagClass(tag) {
+            const classes = { magic: 'tag-magic', urgente: 'tag-urgente', web: 'tag-web', app: 'tag-app', personal: 'tag-personal', trabajo: 'tag-trabajo', marketing: 'tag-marketing', eventos: 'tag-eventos' };
+            return classes[tag] || 'tag-personal';
+        }
+
+        function renderCards() {
+            cards.forEach(card => {
+                const div = document.createElement('div');
+                div.className = 'card';
+                div.innerHTML = `
+                    <h3>${card.title}</h3>
+                    <p>${card.desc}</p>
+                    <span class="tag ${getTagClass(card.tag)}">${card.tag}</span>
+                `;
+                document.getElementById(card.column).appendChild(div);
+            });
+
+            document.getElementById('total').textContent = cards.length;
+            document.getElementById('ideasCount').textContent = cards.filter(c => c.column === 'ideas').length;
+            document.getElementById('progresoCount').textContent = cards.filter(c => c.column === 'progreso').length;
+            document.getElementById('testingCount').textContent = cards.filter(c => c.column === 'testing').length;
+            document.getElementById('doneCount').textContent = cards.filter(c => c.column === 'hecho').length;
+        }
+
+        renderCards();
+    </script>
+</body>
+</html>
