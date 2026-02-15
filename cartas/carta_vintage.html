@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Carta Sergi Ayet - Vintage Typewriter</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Special Elite', 'Courier Prime', 'Courier New', monospace;
+            background: #f5f0e6;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23f5f0e6" width="100" height="100"/><circle fill="%23d4c9b5" cx="20" cy="20" r="1" opacity="0.3"/><circle fill="%23d4c9b5" cx="70" cy="60" r="0.5" opacity="0.5"/></svg>');
+            color: #2c2c2c;
+            padding: 40px;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+        
+        .page {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(to bottom, #f5f0e6, #ebe5d9);
+            padding: 50px 70px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            position: relative;
+        }
+        
+        .page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: repeating-linear-gradient(
+                90deg,
+                #8b4513,
+                #8b4513 10px,
+                transparent 10px,
+                transparent 20px
+            );
+        }
+        
+        .page::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: repeating-linear-gradient(
+                90deg,
+                #8b4513,
+                #8b4513 10px,
+                transparent 10px,
+                transparent 20px
+            );
+        }
+        
+        .letterhead {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px dashed #8b7355;
+        }
+        
+        h1 {
+            font-family: 'Special Elite', cursive;
+            font-size: 28px;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            color: #3c3c3c;
+        }
+        
+        .subtitle {
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: #666;
+        }
+        
+        h2 {
+            font-family: 'Special Elite', cursive;
+            font-size: 18px;
+            margin: 30px 0 15px;
+            padding: 5px 15px;
+            background: #3c3c3c;
+            color: #f5f0e6;
+            display: inline-block;
+            transform: rotate(-1deg);
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+            text-indent: 30px;
+        }
+        
+        p.no-indent {
+            text-indent: 0;
+        }
+        
+        .signature {
+            margin-top: 50px;
+            text-align: right;
+        }
+        
+        .signature .name {
+            font-family: 'Special Elite', cursive;
+            font-size: 22px;
+            letter-spacing: 3px;
+            margin-bottom: 5px;
+        }
+        
+        .signature .title {
+            font-size: 11px;
+            color: #666;
+        }
+        
+        .red-letter {
+            color: #8b0000;
+            font-weight: bold;
+        }
+        
+        .correction {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .correction::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #8b0000;
+            transform: rotate(-5deg);
+        }
+        
+        .ink-blot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(ellipse at center, #5c4a3d 0%, transparent 70%);
+            opacity: 0.3;
+            border-radius: 50%;
+        }
+        
+        .coffee-stain {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border: 2px solid rgba(139, 69, 19, 0.2);
+            border-radius: 50%;
+            opacity: 0.4;
+        }
+        
+        .coffee-stain::after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 60px;
+            height: 60px;
+            border: 1px solid rgba(139, 69, 19, 0.15);
+            border-radius: 50%;
+        }
+        
+        .contact-info {
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(60, 60, 60, 0.05);
+            border-left: 4px solid #8b4513;
+            font-size: 12px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 5px;
+            text-indent: 0;
+        }
+        
+        .divider {
+            text-align: center;
+            margin: 30px 0;
+            font-size: 20px;
+            color: #8b7355;
+            letter-spacing: 20px;
+        }
+        
+        .cv-section {
+            margin: 30px 0;
+        }
+        
+        .cv-item {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border-left: 2px solid #8b7355;
+        }
+        
+        .cv-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .cv-company {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .cv-date {
+            font-size: 11px;
+            color: #8b7355;
+            margin-bottom: 5px;
+        }
+        
+        .page-break {
+            page-break-after: always;
+            margin: 40px 0;
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #8b7355, transparent);
+        }
+        
+        .vintage-frame {
+            border: 3px double #8b7355;
+            padding: 20px;
+            margin: 20px 0;
+            background: rgba(139, 115, 85, 0.05);
+        }
+        
+        @media print {
+            body {
+                background: none;
+            }
+            .page {
+                box-shadow: none;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+        
+        @page {
+            size: A4;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- Coffee stain decoration -->
+        <div class="coffee-stain" style="top: 100px; right: 30px;"></div>
+        <div class="ink-blot" style="bottom: 200px; left: 50px;"></div>
+        
+        <div class="letterhead">
+            <h1>✦ Sergi Ayet ✦</h1>
+            <p class="subtitle">MAGIA CORPORATIVA & MARKETING EXPERIENCIAL</p>
+        </div>
+        
+        <p class="no-indent" style="text-align: right; font-size: 12px;">
+            Barcelona, <span class="red-letter">11</span> de febrero de 2026
+        </p>
+        
+        <br>
+        
+        <p>Estimado equipo de <span class="red-letter">G</span>oogle,</p>
+        
+        <p>Me dirijo a ustedes con gran entusiasmo para explorar la posibilidad de colaborar profesionalmente con <span class="correction">G<span class="red-letter">o</span>ogle</span>, una compañía que no solo lidera la innovación tecnológica, sino que redefine constantemente la manera en que las personas se relacionan con la información, las ideas y el futuro.</p>
+        
+        <p>Soy mago profesional especializado en la creación de experiencias inmersivas donde la magia, la tecnología y la narrativa se fusionan para generar impacto emocional, sorpresa y conexión auténtica. A lo largo de mi trayectoria he trabajado desarrollando propuestas que van más allá del entretenimiento, convirtiendo la magia en una herramienta de comunicación, inspiración y transmisión de valores.</p>
+        
+        <p>La convergencia entre creatividad, tecnología y emoción ha sido siempre el eje central de mi trabajo. Por ello, considero que mi perfil puede aportar valor en contextos como eventos corporativos, lanzamientos, experiencias internas, activaciones de marca o dinámicas orientadas a la cultura, la innovación y el pensamiento disruptivo, ámbitos en los que <span class="correction">G<span class="red-letter">o</span>ogle</span> es referente mundial.</p>
+        
+        <p>Imagino experiencias diseñadas a medida, capaces de traducir conceptos complejos en vivencias memorables, de sorprender sin artificios y de reforzar mensajes clave desde un lenguaje universal: la emoción. Experiencias que no se explican, se viven; que no solo impactan en el momento, sino que permanecen en la memoria.</p>
+        
+        <p>Mi objetivo sería colaborar de forma estrecha con sus equipos creativos y estratégicos para entender sus retos, valores y objetivos, y así desarrollar propuestas alineadas con la identidad y la visión de <span class="correction">G<span class="red-letter">o</span>ogle</span>.</p>
+        
+        <p>Quedo a su disposición para ampliar esta información y explorar posibles vías de colaboración. Agradezco sinceramente el tiempo dedicado a considerar mi candidatura y la oportunidad de presentar una propuesta diferente, pensada para aportar valor desde un enfoque creativo y experiencial.</p>
+        
+        <div class="signature">
+            <p class="name">Sergi Ayet</p>
+            <p class="title">MAGO PROFESIONAL</p>
+        </div>
+        
+        <div class="contact-info">
+            <p>📱 600-665-796</p>
+            <p>📧 info@impactomagico.com</p>
+            <p>🌐 www.impactomagico.com</p>
+            <p>📸 @impactomagico</p>
+        </div>
+        
+        <div class="page-break"></div>
+        
+        <!-- Página 2: CV -->
+        <div class="letterhead">
+            <h1>✦ CV ✦</h1>
+            <p class="subtitle">EXPERIENCIA & FORMACIÓN</p>
+        </div>
+        
+        <h2>PERFIL</h2>
+        
+        <p class="no-indent">Nací en Barcelona el 13 de mayo de 1975, y desde muy joven entendí que la magia no era solo un arte escénico, sino una forma profunda de comunicación. A lo largo de mi trayectoria he dedicado mi vida al ilusionismo como lenguaje emocional, combinándolo de manera natural con el marketing, la psicología y una mirada abierta a la cultura global.</p>
+        
+        <br>
+        
+        <h2>EXPERIENCIA PROFESIONAL</h2>
+        
+        <div class="cv-section">
+            <div class="cv-item">
+                <p class="cv-title">Artista y Mago Profesional</p>
+                <p class="cv-company">Teatros y Ferias - Barcelona</p>
+                <p class="cv-date">Actualidad</p>
+                <p>Actuaciones regulares en espacios como Teatre Neu, Teatre Barradas, Teatre Llantiol y ferias de muestras.</p>
+            </div>
+            
+            <div class="cv-item">
+                <p class="cv-title">Marketing Experiencial y Mágico</p>
+                <p class="cv-company">Marcas Internacionales</p>
+                <p class="cv-date">Philip Morris, Sony, Jameson, Coca-Cola, BMW, Asics, Custo Barcelona</p>
+                <p>Marketing directo e integrando magia como herramienta de impacto emocional.</p>
+            </div>
+            
+            <div class="cv-item">
+                <p class="cv-title">Asesor Mágico</p>
+                <p class="cv-company">Focus, Barcelona</p>
+                <p class="cv-date">2012-2015</p>
+                <p>Producciones: Splenda, Ozom</p>
+            </div>
+            
+            <div class="cv-item">
+                <p class="cv-title">Artista y Asesor Mágico</p>
+                <p class="cv-company">Borràs, Barcelona</p>
+                <p class="cv-date">2010-2017</p>
+                <p>Diseño y ejecución de juegos para cajas mágicas. Grabación de DVDs instructivos.</p>
+            </div>
+            
+            <div class="cv-item">
+                <p class="cv-title">Televisión</p>
+                <p class="cv-company">TVE1</p>
+                <p class="cv-date">Los Lunnis, Redes</p>
+                <p>Colaboración en programas de Eduardo Punset y-presentador en Los Lunnis.</p>
+            </div>
+        </div>
+        
+        <h2>FORMACIÓN</h2>
+        
+        <div class="vintage-frame">
+            <p>• Arte teatral y magia con Juan Tamariz, Gabriel Paredes y Roberto Giobbi</p>
+            <p>• Ciudades: Barcelona, Lisboa, La Haya</p>
+            <p>• Marketing y psicología</p>
+            <p>• Postgrado en Lengua Sánscrita - Universidad de Barcelona</p>
+        </div>
+        
+        <h2>VALORES</h2>
+        
+        <p>La ilusión por lo imposible, la empatía y la alegría. La magia como vehículo de conexión humana, dignidad y esperanza. La sorpresa y la creatividad como pilares de la comunicación efectiva.</p>
+        
+        <div class="signature">
+            <p class="name">Sergi Ayet</p>
+            <p class="title">✦ impactomagico.com ✦</p>
+        </div>
+    </div>
+</body>
+</html>
