@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ MagicPortal - Sergi Ayet</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --magic: #f093fb;
+            --work: #6bcb77;
+            --email: #48bb78;
+            --social: #4facfe;
+            --done: #ff6b6b;
+            --bg: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            min-height: 100vh;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, var(--magic), var(--social), var(--work));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle { opacity: 0.7; font-size: 1.1rem; }
+        
+        .quick-stats {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .stat-badge {
+            background: rgba(255,255,255,0.1);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .stat-badge strong { color: var(--magic); }
+        
+        .main-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .main-btn {
+            background: rgba(255,255,255,0.08);
+            border-radius: 24px;
+            padding: 35px 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid transparent;
+        }
+        
+        .main-btn:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(255,255,255,0.3);
+        }
+        
+        .main-btn .emoji { font-size: 3.5rem; margin-bottom: 15px; display: block; }
+        .main-btn h2 { font-size: 1.4rem; margin-bottom: 10px; }
+        .main-btn p { opacity: 0.7; font-size: 0.9rem; }
+        
+        .main-btn.magic { background: linear-gradient(135deg, rgba(240,147,251,0.2), rgba(245,87,108,0.2)); }
+        .main-btn.work { background: linear-gradient(135deg, rgba(107,203,119,0.2), rgba(72,187,120,0.2)); }
+        .main-btn.email { background: linear-gradient(135deg, rgba(79,172,254,0.2), rgba(72,187,120,0.2)); }
+        .main-btn.social { background: linear-gradient(135deg, rgba(255,217,61,0.2), rgba(255,165,2,0.2)); }
+        .main-btn.fun { background: linear-gradient(135deg, rgba(255,107,107,0.2), rgba(166,173,255,0.2)); }
+        .main-btn.done { background: linear-gradient(135deg, rgba(107,203,119,0.2), rgba(72,187,120,0.2)); }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        
+        .modal.active { display: block; }
+        
+        .modal-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            border-radius: 24px;
+            padding: 40px;
+            position: relative;
+            animation: slideUp 0.4s ease;
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 2rem;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+        
+        .modal-close:hover { opacity: 1; }
+        
+        .modal h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+        }
+        
+        .kanban-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .kanban-col {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 20px;
+            min-height: 300px;
+        }
+        
+        .kanban-col h3 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid;
+        }
+        
+        .kanban-col.ideas h3 { border-color: #ffd93d; color: #ffd93d; }
+        .kanban-col.progreso h3 { border-color: #6bcb77; color: #6bcb77; }
+        .kanban-col.testing h3 { border-color: #4d96ff; color: #4d96ff; }
+        .kanban-col.hecho h3 { border-color: #ff6b6b; color: #ff6b6b; }
+        
+        .k-card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 12px;
+            cursor: grab;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+        
+        .k-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(255,255,255,0.2);
+        }
+        
+        .k-card.dragging { opacity: 0.5; transform: rotate(3deg); }
+        .k-card h4 { font-size: 0.95rem; margin-bottom: 8px; }
+        .k-card p { font-size: 0.8rem; opacity: 0.7; }
+        
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            margin-top: 8px;
+        }
+        
+        .tag-magic { background: rgba(240,147,251,0.3); color: #f093fb; }
+        .tag-work { background: rgba(107,203,119,0.3); color: #6bcb77; }
+        .tag-email { background: rgba(79,172,254,0.3); color: #4facfe; }
+        .tag-social { background: rgba(255,217,61,0.3); color: #ffd93d; }
+        .tag-done { background: rgba(255,107,107,0.3); color: #ff6b6b; }
+        
+        .data-list {
+            list-style: none;
+        }
+        
+        .data-list li {
+            background: rgba(255,255,255,0.05);
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .data-list .name { font-weight: 600; }
+        .data-list .detail { opacity: 0.7; font-size: 0.9rem; }
+        .data-list .status {
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+        }
+        
+        .status-sent { background: rgba(107,203,119,0.3); color: #6bcb77; }
+        .status-pending { background: rgba(255,217,61,0.3); color: #ffd93d; }
+        .status-bounce { background: rgba(255,107,107,0.3); color: #ff6b6b; }
+        
+        .sub-btns {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+        
+        .sub-btn {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 12px 24px;
+            border-radius: 20px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .sub-btn:hover { background: rgba(255,255,255,0.2); }
+        
+        .surprise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .surprise-card {
+            background: linear-gradient(135deg, rgba(240,147,251,0.2), rgba(245,87,108,0.2));
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .surprise-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(240,147,251,0.3);
+        }
+        
+        .surprise-card .icon { font-size: 3rem; margin-bottom: 15px; }
+        .surprise-card h4 { margin-bottom: 10px; }
+        .surprise-card p { opacity: 0.7; font-size: 0.85rem; }
+        
+        .drop-zone {
+            min-height: 100px;
+            border: 2px dashed transparent;
+            border-radius: 12px;
+            transition: border-color 0.2s;
+        }
+        
+        .drop-zone.drag-over {
+            border-color: rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.05);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px;
+            opacity: 0.5;
+            font-size: 0.85rem;
+        }
+        
+        @media (max-width: 700px) {
+            h1 { font-size: 1.8rem; }
+            .main-btn { padding: 25px 20px; }
+            .main-btn .emoji { font-size: 2.5rem; }
+            .modal-content { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>✨ MagicPortal</h1>
+        <p class="subtitle">Centro de mando - Sergi Ayet</p>
+        <div class="quick-stats">
+            <span class="stat-badge">📧 <strong>5</strong> emails</span>
+            <span class="stat-badge">🎯 <strong>22</strong> proyectos</span>
+            <span class="stat-badge">🤖 <strong>3</strong> agentes</span>
+            <span class="stat-badge">✅ <strong>14</strong> terminados</span>
+        </div>
+    </header>
+    
+    <div class="main-grid">
+        <div class="main-btn magic" onclick="openModal('kanban')">
+            <span class="emoji">📋</span>
+            <h2>MagicKanban</h2>
+            <p>Proyectos personales con fichas móviles</p>
+        </div>
+        
+        <div class="main-btn work" onclick="openModal('manager')">
+            <span class="emoji">📊</span>
+            <h2>ManagerKanban</h2>
+            <p>Gestión completa de proyectos</p>
+        </div>
+        
+        <div class="main-btn email" onclick="openModal('emails')">
+            <span class="emoji">📧</span>
+            <h2>Campaña Emails</h2>
+            <p>Hoteles, Tour Operadores, MWC</p>
+        </div>
+        
+        <div class="main-btn social" onclick="openModal('social')">
+            <span class="emoji">💼</span>
+            <h2>Redes & Outreach</h2>
+            <p>LinkedIn, Instagram, Contactos</p>
+        </div>
+        
+        <div class="main-btn fun" onclick="openModal('sorpresas')">
+            <span class="emoji">🎁</span>
+            <h2>🎁 Sorpresas</h2>
+            <p>Contenido especial y detalles</p>
+        </div>
+        
+        <div class="main-btn done" onclick="openModal('hecho')">
+            <span class="emoji">🏆</span>
+            <h2>Proyecto Terminados</h2>
+            <p>Todo lo completado</p>
+        </div>
+    </div>
+    
+    <!-- Modal: MagicKanban -->
+    <div class="modal" id="modal-kanban">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('kanban')">×</span>
+            <h2>📋 MagicKanban - Fichas Móviles</h2>
+            <div class="kanban-grid">
+                <div class="kanban-col ideas">
+                    <h3>💡 Ideas</h3>
+                    <div class="drop-zone" id="mk-ideas"></div>
+                </div>
+                <div class="kanban-col progreso">
+                    <h3>🚀 Progreso</h3>
+                    <div class="drop-zone" id="mk-progreso"></div>
+                </div>
+                <div class="kanban-col testing">
+                    <h3>🧪 Testing</h3>
+                    <div class="drop-zone" id="mk-testing"></div>
+                </div>
+                <div class="kanban-col hecho">
+                    <h3>✅ Hecho</h3>
+                    <div class="drop-zone" id="mk-hecho"></div>
+                </div>
+            </div>
+            <div class="sub-btns">
+                <a href="magic-kanban.html" class="sub-btn">📋 Vista Completa</a>
+                <a href="http://sergiayet.github.io/Magic-bot-Kanban/magic-kanban.html" class="sub-btn">🌐 Web Version</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal: ManagerKanban -->
+    <div class="modal" id="modal-manager">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('manager')">×</span>
+            <h2>📊 ManagerKanban</h2>
+            
+            <h3 style="margin: 20px 0 15px;">✈️ Tour Operadores</h3>
+            <ul class="data-list" id="tour-operadores-list"></ul>
+            
+            <h3 style="margin: 30px 0 15px;">🏨 Hoteles</h3>
+            <ul class="data-list" id="hoteles-list"></ul>
+            
+            <h3 style="margin: 30px 0 15px;">📱 Empresas MWC</h3>
+            <ul class="data-list" id="mwc-list"></ul>
+            
+            <div class="sub-btns">
+                <a href="managerkanban.html" class="sub-btn">📋 Vista Completa</a>
+                <a href="managerkanban.md" class="sub-btn">📄 Markdown</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal: Emails -->
+    <div class="modal" id="modal-emails">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('emails')">×</span>
+            <h2>📧 Campaña Emails - Cartas Premium</h2>
+            
+            <ul class="data-list">
+                <li>
+                    <div>
+                        <div class="name">🏨 Carta Hoteles Premium</div>
+                        <div class="detail">Metodología premium - No vender magia, vender resultado</div>
+                    </div>
+                    <span class="status status-sent">5 enviados</span>
+                </li>
+                <li>
+                    <div>
+                        <div class="name">✈️ Carta Tour Operadores</div>
+                        <div class="detail">Sector turístico</div>
+                    </div>
+                    <span class="status status-pending">14 encontrados</span>
+                </li>
+                <li>
+                    <div>
+                        <div class="name">📱 Carta Empresas MWC</div>
+                        <div class="detail">Sector tecnológico</div>
+                    </div>
+                    <span class="status status-pending">Pendiente</span>
+                </li>
+            </ul>
+            
+            <div class="sub-btns">
+                <a href="email_hotel_premium.md" class="sub-btn">📄 Carta Hoteles</a>
+                <a href="email_touroperadores_premium.md" class="sub-btn">📄 Carta Tour Ops</a>
+                <a href="email_empresas_mwc_premium.md" class="sub-btn">📄 Carta MWC</a>
+                <a href="metodologia_premium_magia.md" class="sub-btn">🎯 Metodología</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal: Social -->
+    <div class="modal" id="modal-social">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('social')">×</span>
+            <h2>💼 Redes & Outreach</h2>
+            
+            <ul class="data-list">
+                <li>
+                    <div>
+                        <div class="name">🤝 Ana Arroquia</div>
+                        <div class="detail">Marketing Digital</div>
+                    </div>
+                    <span class="status status-pending">Por contactar</span>
+                </li>
+                <li>
+                    <div>
+                        <div class="name">🎭 Shakira Bagan</div>
+                        <div class="detail">Sector Cultural</div>
+                    </div>
+                    <span class="status status-pending">Por contactar</span>
+                </li>
+                <li>
+                    <div>
+                        <div class="name">🎭 Helena Romagós Ribot</div>
+                        <div class="detail">Gestora Cultural - Girona</div>
+                    </div>
+                    <span class="status status-pending">Por contactar</span>
+                </li>
+                <li>
+                    <div>
+                        <div class="name">🌾 Albert Fuguet Morales</div>
+                        <div class="detail">Innovació Rural - Catalunya</div>
+                    </div>
+                    <span class="status status-pending">Por contactar</span>
+                </li>
+            </ul>
+            
+            <div class="sub-btns">
+                <a href="linkedin_ana_corto.md" class="sub-btn">📱 Ana Arroquia</a>
+                <a href="linkedin_helena_romagos.md" class="sub-btn">📱 Helena</a>
+                <a href="linkedin_albert_fuguet.md" class="sub-btn">📱 Albert</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal: Sorpresas -->
+    <div class="modal" id="modal-sorpresas">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('sorpresas')">×</span>
+            <h2>🎁 Sorpresas</h2>
+            
+            <div class="surprise-grid">
+                <div class="surprise-card" onclick="alert('💕 Juego del Amor - Para San Valentín')">
+                    <div class="icon">💕</div>
+                    <h4>Juego del Amor</h4>
+                    <p>Para San Valentín</p>
+                </div>
+                <div class="surprise-card" onclick="alert('🌅 Sorpresa del Despertar - Mensaje especial')">
+                    <div class="icon">🌅</div>
+                    <h4>Sorpresa del Despertar</h4>
+                    <p>Mensaje especial</p>
+                </div>
+                <div class="surprise-card" onclick="alert('📄 CV Vintage - Portfolio elegante')">
+                    <div class="icon">📄</div>
+                    <h4>CV Vintage</h4>
+                    <p>Portfolio elegante</p>
+                </div>
+                <div class="surprise-card" onclick="alert('🎬 Demo Videos - Videos de magia')">
+                    <div class="icon">🎬</div>
+                    <h4>Demo Videos</h4>
+                    <p>Videos de magia</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal: Terminados -->
+    <div class="modal" id="modal-hecho">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('hecho')">×</span>
+            <h2>🏆 Proyectos Terminados</h2>
+            
+            <ul class="data-list">
+                <li>
+                    <div>
+                        <div class="name">✨ MagicBot Telegram</div>
+                        <div class="detail">Sistema de automatización completo</div>
+                    </div>
+                    <span class="status status-sent">✅</span>
+                </li>
+                <li>
+                    <div>
+                        <div class="name">📄 CV Vintage PDF</div>
+                        <div class="detail">4 páginas diseño elegante</div>
+                    </div>
+                    <span class="status status-sent">✅</span>
+                </li>
+                <li>
+                    <div>
+                        <div class="name">🧹 Limpieza Spam</div>
+                        <div class="detail">~5,600 emails eliminados</div>
+                    </div>
+                    <span class="status status-sent">✅</span>
+                </li>
+                <li>
+                    <div>
+                        <div class="name">📧 Sistema Email</div>
+                        <div class="detail">Python smtplib + Gmail</div>
+                    </div>
+                    <span class="status status-sent">✅</span>
+                </li>
+                <li>
+                    <div>
+                        <div class="name">🤖 Team Structure</div>
+                        <div class="detail">Email + Social + Leads Agents</div>
+                    </div>
+                    <span class="status status-sent">✅</span>
+                </li>
+                <li>
+                    <div>
+                        <div class="name">🎯 Metodología Premium</div>
+                        <div class="detail">Vender resultado, no magia</div>
+                    </div>
+                    <span class="status status-sent">✅</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <p>✨ MagicPortal - Centro de Mando | 2026-02-15</p>
+    </footer>
+
+    <script>
+        // ============ DATA ============
+        const magicKanbanCards = [
+            // Ideas
+            { id: 1, title: '🎪 MWC 2026', desc: 'Febrero Barcelona', tag: 'magic', col: 'ideas' },
+            { id: 2, title: '📱 Social Agent', desc: 'Instagram automatizado', tag: 'magic', col: 'ideas' },
+            { id: 3, title: '🔍 Completar emails', desc: '14/20 hotels sin email', tag: 'email', col: 'ideas' },
+            { id: 4, title: '🏨 Landing hoteles', desc: 'Página específica web', tag: 'work', col: 'ideas' },
+            { id: 5, title: '🎪 Fitur 2026', desc: 'Enero Madrid', tag: 'magic', col: 'ideas' },
+            { id: 6, title: '📸 Photoshoot', desc: 'Traje oscuro, props', tag: 'magic', col: 'ideas' },
+            
+            // Progreso
+            { id: 7, title: '🏨 Campaña hotels', desc: '5 enviados | 14 pendientes', tag: 'email', col: 'progreso' },
+            { id: 8, title: '👥 Contactos LinkedIn', desc: 'Ana, Shakira, Helena, Albert', tag: 'social', col: 'progreso' },
+            { id: 9, title: '📧 Sistema Email', desc: 'Python smtplib + bounce', tag: 'magic', col: 'progreso' },
+            { id: 10, title: '🔄 Morning Report', desc: 'Resumen diario 8AM', tag: 'magic', col: 'progreso' },
+            { id: 11, title: '🤖 Team Structure', desc: '3 agentes especializados', tag: 'magic', col: 'progreso' },
+            
+            // Testing
+            { id: 12, title: '📬 Respuestas hotels', desc: 'Esperando respuestas', tag: 'email', col: 'testing' },
+            { id: 13, title: '✈️ Tour Operadores', desc: '14 operadores encontrados', tag: 'work', col: 'testing' },
+            
+            // Hecho
+            { id: 14, title: '🧹 Spam eliminado', desc: '~5,600 emails', tag: 'magic', col: 'hecho' },
+            { id: 15, title: '📧 5 emails hotels', desc: 'Ritz, Westin, Hilton...', tag: 'email', col: 'hecho' },
+            { id: 16, title: '✨ MagicBot Telegram', desc: 'Operativo', tag: 'magic', col: 'hecho' },
+            { id: 17, title: '📄 CV Vintage', desc: '4 páginas', tag: 'work', col: 'hecho' },
+            { id: 18, title: '📋 ManagerKanban', desc: 'Gestión general', tag: 'work', col: 'hecho' },
+            { id: 19, title: '🎯 Metodología Premium', desc: 'Vender resultado', tag: 'marketing', col: 'hecho' },
+            { id: 20, title: '💰 Lead Generation', desc: 'Scripts captación', tag: 'work', col: 'hecho' }
+        ];
+        
+        const tourOperadores = [
+            { nombre: 'CPC (Cultural Premium Connection)', emails: 3 },
+            { nombre: 'Art Factory', emails: 2 },
+            { nombre: '4U Artists', emails: 2 },
+            { nombre: 'ShowTime Artists', emails: 3 },
+            { nombre: 'Tot Art', emails: 1 }
+        ];
+        
+        const hoteles = [
+            { nombre: 'Hotel Ritz Madrid', email: 'info@ritzcarlton.com', estado: 'enviado' },
+            { nombre: 'Hotel Ritz Barcelona', email: 'info@ritzcarlton.com', estado: 'enviado' },
+            { nombre: 'The Westin Palace Madrid', email: 'events.madrid@westin.com', estado: 'enviado' },
+            { nombre: 'Hotel Hilton Barcelona', email: 'events.barcelona@hilton.com', estado: 'enviado' },
+            { nombre: 'Barcelona Marriott', email: 'barcelona.events@marriott.com', estado: 'enviado' },
+            { nombre: 'NH Collection Madrid', email: '(bounce)', estado: 'eliminado' }
+        ];
+        
+        const empresasMWC = [
+            { nombre: 'Google', estado: 'por_buscar' },
+            { nombre: 'Samsung', estado: 'por_buscar' },
+            { nombre: 'Microsoft', estado: 'por_buscar' },
+            { nombre: 'Telefónica', estado: 'por_buscar' },
+            { nombre: 'GSMA', estado: 'por_buscar' }
+        ];
+        
+        // ============ FUNCTIONS ============
+        function getTagClass(tag) {
+            const classes = { magic: 'tag-magic', work: 'tag-work', email: 'tag-email', social: 'tag-social', marketing: 'tag-magic' };
+            return classes[tag] || 'tag-magic';
+        }
+        
+        function renderMagicKanban() {
+            magicKanbanCards.forEach(card => {
+                const div = document.createElement('div');
+                div.className = 'k-card';
+                div.draggable = true;
+                div.dataset.id = card.id;
+                div.innerHTML = `<h4>${card.title}</h4><p>${card.desc}</p><span class="tag ${getTagClass(card.tag)}">${card.tag}</span>`;
+                div.addEventListener('dragstart', handleDragStart);
+                div.addEventListener('dragend', handleDragEnd);
+                document.getElementById(`mk-${card.col}`).appendChild(div);
+            });
+        }
+        
+        function handleDragStart(e) {
+            this.classList.add('dragging');
+            e.dataTransfer.setData('text/plain', this.dataset.id);
+        }
+        
+        function handleDragEnd(e) {
+            this.classList.remove('dragging');
+        }
+        
+        function setupDropZones() {
+            document.querySelectorAll('.drop-zone').forEach(zone => {
+                zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('drag-over'); });
+                zone.addEventListener('dragleave', e => { zone.classList.remove('drag-over'); });
+                zone.addEventListener('drop', e => {
+                    e.preventDefault();
+                    zone.classList.remove('drag-over');
+                    const cardId = e.dataTransfer.getData('text/plain');
+                    const card = magicKanbanCards.find(c => c.id == cardId);
+                    if (card) {
+                        card.col = zone.id.replace('mk-', '');
+                        zone.appendChild(document.querySelector(`[data-id="${cardId}"]`));
+                    }
+                });
+            });
+        }
+        
+        function renderLists() {
+            // Tour Operadores
+            const tourList = document.getElementById('tour-operadores-list');
+            tourOperadores.forEach(t => {
+                const li = document.createElement('li');
+                li.innerHTML = `<div><div class="name">✈️ ${t.nombre}</div><div class="detail">${t.emails} emails encontrados</div></div><span class="status status-pending">Por buscar</span>`;
+                tourList.appendChild(li);
+            });
+            
+            // Hoteles
+            const hotelsList = document.getElementById('hoteles-list');
+            hoteles.forEach(h => {
+                const li = document.createElement('li');
+                li.innerHTML = `<div><div class="name">🏨 ${h.nombre}</div><div class="detail">${h.email}</div></div><span class="status ${h.estado === 'enviado' ? 'status-sent' : 'status-bounce'}">${h.estado}</span>`;
+                hotelsList.appendChild(li);
+            });
+            
+            // MWC
+            const mwcList = document.getElementById('mwc-list');
+            empresasMWC.forEach(m => {
+                const li = document.createElement('li');
+                li.innerHTML = `<div><div class="name">📱 ${m.nombre}</div><div class="detail">MWC 2026 Barcelona</div></div><span class="status status-pending">${m.estado.replace('_', ' ')}</span>`;
+                mwcList.appendChild(li);
+            });
+        }
+        
+        function openModal(id) {
+            document.getElementById(`modal-${id}`).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal(id) {
+            document.getElementById(`modal-${id}`).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal on backdrop click
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', e => {
+                if (e.target === modal) closeModal(modal.id.replace('modal-', ''));
+            });
+        });
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            renderMagicKanban();
+            setupDropZones();
+            renderLists();
+        });
+    </script>
+</body>
+</html>
