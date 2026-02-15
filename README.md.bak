@@ -1,0 +1,29 @@
+# MagicKanban Web
+
+## Acceder
+
+**http://sergiayet.github.io/Magic-bot-Kanban/kanban-viewer.html**
+
+O directamente:
+
+**http://sergiayet.github.io/Magic-bot-Kanban/magic-kanban.html**
+
+## Actualizar
+
+1. Editar `index.html`
+2. Commit y push:
+```bash
+git add .
+git commit -m "Update kanban"
+git push origin main
+```
+
+## Contenido
+
+- Fichas móviles (drag & drop)
+- 4 columnas: Ideas, Progreso, Testing, Hecho
+- Contador de estadísticas
+- Enlaces a recursos
+
+---
+Creado: 2026-02-15
