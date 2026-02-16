@@ -1,21 +1,15 @@
-nombre,empresa,contacto,prioridad,email,estado,fecha_busqueda
-Oracle Spain - RRHH,Oracle,RRHH Director,ALTA,,POR_BUSCAR,2026-02-16
-Google Spain - RRHH,Google,HR Director,ALTA,,POR_BUSCAR,2026-02-16
-Microsoft Spain - RRHH,Microsoft,HR Director,ALTA,,POR_BUSCAR,2026-02-16
-Telefónica - RRHH,Telefónica,RRHH Director,ALTA,,POR_BUSCAR,2026-02-16
-Santander - RRHH,Santander,HR Director,ALTA,,POR_BUSCAR,2026-02-16
-BBVA - RRHH,BBVA,HR Director,ALTA,,POR_BUSCAR,2026-02-16
-CaixaBank - RRHH,CaixaBank,RRHH Director,ALTA,,POR_BUSCAR,2026-02-16
-Accenture Spain - RRHH,Accenture,HR Director,MEDIA,,POR_BUSCAR,2026-02-16
-McKinsey Spain - RRHH,McKinsey,HR Director,MEDIA,,POR_BUSCAR,2026-02-16
-Docusign Spain - RRHH,Docusign,HR Director,MEDIA,,POR_BUSCAR,2026-02-16
-Amazon Spain - RRHH,Amazon,HR Director,MEDIA,,POR_BUSCAR,2026-02-16
-IBM Spain - RRHH,IBM,HR Director,MEDIA,,POR_BUSCAR,2026-02-16
-SAP Spain - RRHH,SAP,HR Director,MEDIA,,POR_BUSCAR,2026-02-16
-Salesforce Spain - RRHH,Salesforce,HR Director,MEDIA,,POR_BUSCAR,2026-02-16
-Endesa - RRHH,Endesa,RRHH Director,BAJA,,POR_BUSCAR,2026-02-16
-Repsol - RRHH,Repsol,HR Director,BAJA,,POR_BUSCAR,2026-02-16
-Inditex - RRHH,Inditex,RRHH Director,BAJA,,POR_BUSCAR,2026-02-16
-Zara Home - RRHH,Inditex,HR Director,BAJA,,POR_BUSCAR,2026-02-16
-Seat - RRHH,Seat,RRHH Director,BAJA,,POR_BUSCAR,2026-02-16
-Renault Spain - RRHH,Renault,HR Director,BAJA,,POR_BUSCAR,2026-02-16
+nombre,email,cargo,prioridad,estado,fecha
+Elena García-Olías,elena.garcia-olias@oracle.com,2° HR Director,ALTA,POR_ENVIAR,2026-02-16
+Laura Díaz González,laura.diaz@vecttor.com,Directora RRHH,ALTA,POR_ENVIAR,2026-02-16
+RRHH Google Spain,hr-es@google.com,HR Director,ALTA,POR_ENVIAR,2026-02-16
+RRHH Microsoft Spain,hrspain@microsoft.com,HR Director,ALTA,POR_ENVIAR,2026-02-16
+RRHH Telefónica,rrhh@telefonica.com,RRHH Director,ALTA,POR_ENVIAR,2026-02-16
+RRHH BBVA,rrhh@bbva.com,HR Director,ALTA,POR_ENVIAR,2026-02-16
+RRHH Santander,rrhh@santander.com,HR Director,ALTA,POR_ENVIAR,2026-02-16
+RRHH Endesa,rrhh@endesa.com,HR Director,ALTA,POR_ENVIAR,2026-02-16
+RRHH Iberdrola,rrhh@iberdrola.com,HR Director,ALTA,POR_ENVIAR,2026-02-16
+RRHH Inditex,rrhh@inditex.com,HR Director,ALTA,POR_ENVIAR,2026-02-16
+RRHH Mango,rrhh@mango.com,HR Director,MEDIA,PENDIENTE,2026-02-16
+RRHH Seat,rrhh@seat.es,HR Director,MEDIA,PENDIENTE,2026-02-16
+RRHH Vodafone,rrhh@vodafone.es,HR Director,MEDIA,PENDIENTE,2026-02-16
+RRHH Orange,rrhh@orange.es,HR Director,MEDIA,PENDIENTE,2026-02-16

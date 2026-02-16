@@ -1,15 +1,21 @@
-nombre,web,ciudad,email,estado,fecha_busqueda
-Hotel Arts Barcelona,www.hotelartsbarcelona.com,Barcelona,,POR_BUSCAR,2026-02-16
-Mandarin Oriental Barcelona,www.mandarinoriental.com/barcelona,Barcelona,,POR_BUSCAR,2026-02-16
-Hotel W Barcelona,www.whotels.com/barcelona,Barcelona,,POR_BUSCAR,2026-02-16
-Hotel Casa Fuster Barcelona,www.hotelcasafuster.com,Barcelona,,POR_BUSCAR,2026-02-16
-Hotel Meliá Barcelona,www.melia.com,Barcelona,,POR_BUSCAR,2026-02-16
-Hotel Sheraton Barcelona,www.marriott.com,Barcelona,,POR_BUSCAR,2026-02-16
-Hotel Pullman Barcelona,www.accorhotels.com,Barcelona,,POR_BUSCAR,2026-02-16
-Hotel Novotel Barcelona,www.accorhotels.com,Barcelona,,POR_BUSCAR,2026-02-16
-Hotel Gran Meliá Fénix Madrid,www.melia.com,Madrid,,POR_BUSCAR,2026-02-16
-Hotel InterContinental Madrid,www.ihg.com,Madrid,,POR_BUSCAR,2026-02-16
-Hotel Axel Madrid,www.axelhotels.com,Madrid,,POR_BUSCAR,2026-02-16
-Hotel Only YOU Madrid,www.onlyyouhotels.com,Madrid,,POR_BUSCAR,2026-02-16
-Hotel Eurostars Madrid Tower,www.eurostarshotels.com,Madrid,,POR_BUSCAR,2026-02-16
-Hotel Vincci Madrid,www.vinccihoteles.com,Madrid,,POR_BUSCAR,2026-02-16
+nombre,email,cargo,prioridad,estado,fecha
+Hotel Arts Barcelona,events@hotelartsbarcelona.com,Events,ALTA,POR_ENVIAR,2026-02-16
+Hotel W Barcelona,events@whotelsbarcelona.com,Events,ALTA,POR_ENVIAR,2026-02-16
+Mandarin Oriental Barcelona,events@mandarinorientalbarcelona.com,Events,ALTA,POR_ENVIAR,2026-02-16
+Hotel Casa Fuster,events@hotelcasafuster.com,Events,ALTA,POR_ENVIAR,2026-02-16
+Hotel Gran Meliá Fénix Madrid,events@melia.com,Events,ALTA,POR_ENVIAR,2026-02-16
+Hotel Axel Madrid,events@axelhotels.com,Events,ALTA,POR_ENVIAR,2026-02-16
+Hotel Only YOU Madrid,events@onlyyouhotels.com,Events,ALTA,POR_ENVIAR,2026-02-16
+Hotel Eurostars Madrid Tower,events@eurostarshotels.com,Events,ALTA,POR_ENVIAR,2026-02-16
+Hotel Vincci Madrid,events@vinccihoteles.com,Events,ALTA,POR_ENVIAR,2026-02-16
+Hotel Ritz Madrid,info@ritzcarlton.com,Events,ALTA,POR_ENVIAR,2026-02-16
+Hotel Ritz Barcelona,info@ritzcarlton.com,Events,ALTA,POR_ENVIAR,2026-02-16
+The Westin Palace Madrid,events.madrid@westin.com,Events,ALTA,POR_ENVIAR,2026-02-16
+Hotel Hilton Barcelona,events.barcelona@hilton.com,Events,ALTA,POR_ENVIAR,2026-02-16
+Barcelona Marriott,barcelona.events@marriott.com,Events,ALTA,POR_ENVIAR,2026-02-16
+Hotel Meliá Barcelona,events@melia.com,Events,ALTA,POR_ENVIAR,2026-02-16
+Hotel NH Barcelona,events@nh-hotels.com,Events,ALTA,POR_ENVIAR,2026-02-16
+Hotel Accor Barcelona,events@accorhotels.com,Events,ALTA,POR_ENVIAR,2026-02-16
+Hotel Marriot Barcelona,barcelona.events@marriott.com,Events,ALTA,POR_ENVIAR,2026-02-16
+Hotel W Madrid,events@whotelsmadrid.com,Events,ALTA,POR_ENVIAR,2026-02-16
+Hotel Tryp Barcelona,events@meliaprojectshoteles.com,Events,ALTA,POR_ENVIAR,2026-02-16

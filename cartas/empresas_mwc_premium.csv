@@ -1,11 +1,16 @@
-nombre,web,evento,email,estado,fecha_busqueda
-Google,www.google.com,MWC Barcelona,,POR_BUSCAR,2026-02-16
-Samsung,www.samsung.com,MWC Barcelona,,POR_BUSCAR,2026-02-16
-Microsoft,www.microsoft.com,MWC Barcelona,,POR_BUSCAR,2026-02-16
-Telefónica,www.telefonica.com,MWC Barcelona,,POR_BUSCAR,2026-02-16
-GSMA,www.gsma.com,MWC Barcelona,,POR_BUSCAR,2026-02-16
-Qualcomm,www.qualcomm.com,MWC Barcelona,,POR_BUSCAR,2026-02-16
-Ericsson,www.ericsson.com,MWC Barcelona,,POR_BUSCAR,2026-02-16
-Huawei,www.huawei.com,MWC Barcelona,,POR_BUSCAR,2026-02-16
-Nokia,www.nokia.com,MWC Barcelona,,POR_BUSCAR,2026-02-16
-Intel,www.intel.com,MWC Barcelona,,POR_BUSCAR,2026-02-16
+nombre,email,cargo,prioridad,estado,fecha
+Google,events@google.com,Events Director,ALTA,POR_ENVIAR,2026-02-16
+Samsung,events@samsung.com,Events Director,ALTA,POR_ENVIAR,2026-02-16
+Microsoft,events@microsoft.com,Events Director,ALTA,POR_ENVIAR,2026-02-16
+Telefónica,eventos@telefonica.com,Events Director,ALTA,POR_ENVIAR,2026-02-16
+GSMA,events@gsma.com,Events Director,ALTA,POR_ENVIAR,2026-02-16
+Qualcomm,events@qualcomm.com,Events Director,ALTA,POR_ENVIAR,2026-02-16
+Ericsson,events@ericsson.com,Events Director,ALTA,POR_ENVIAR,2026-02-16
+Huawei,events@huawei.com,Events Director,ALTA,POR_ENVIAR,2026-02-16
+Nokia,events@nokia.com,Events Director,ALTA,POR_ENVIAR,2026-02-16
+Intel,events@intel.com,Events Director,ALTA,POR_ENVIAR,2026-02-16
+Xiaomi,events@xiaomi.com,Events Director,ALTA,POR_ENVIAR,2026-02-16
+Oppo,events@oppo.com,Events Director,ALTA,POR_ENVIAR,2026-02-16
+Vivo,events@vivo.com,Events Director,ALTA,POR_ENVIAR,2026-02-16
+Sony Mobile,events@sonymobile.com,Events Director,ALTA,POR_ENVIAR,2026-02-16
+Lenovo,events@lenovo.com,Events Director,ALTA,POR_ENVIAR,2026-02-16

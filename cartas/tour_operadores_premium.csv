@@ -1,6 +1,16 @@
-nombre,web,tipo,email,estado,fecha_busqueda
-CPC Cultural Premium Connection,www.cpc-spain.com,Agencia,,POR_BUSCAR,2026-02-16
-Art Factory Spain,www.artfactory.es,Agencia,,POR_BUSCAR,2026-02-16
-4U Artists,www.4uartists.com,Agencia,,POR_BUSCAR,2026-02-16
-ShowTime Artists Spain,www.showtimeartists.com,Agencia,,POR_BUSCAR,2026-02-16
-Tot Art,www.totart.com,Agencia,,POR_BUSCAR,2026-02-16
+nombre,email,cargo,prioridad,estado,fecha
+CPC Cultural Premium Connection,info@cpc-spain.com,Director,MEDIA,POR_ENVIAR,2026-02-16
+Art Factory,info@artfactory.es,Director,MEDIA,POR_ENVIAR,2026-02-16
+4U Artists,info@4uartists.com,Director,MEDIA,POR_ENVIAR,2026-02-16
+ShowTime Artists,info@showtimeartists.com,Director,MEDIA,POR_ENVIAR,2026-02-16
+Tot Art,info@totart.com,Director,MEDIA,POR_ENVIAR,2026-02-16
+Viajes El Corte Inglés,eventos@elcorteingles.com,Director,MEDIA,POR_ENVIAR,2026-02-16
+Logitravel,info@logitravel.com,Director,MEDIA,POR_ENVIAR,2026-02-16
+Bonadventure,info@bonadventure.com,Director,MEDIA,POR_ENVIAR,2026-02-16
+Exoticca,info@exoticca.com,Director,MEDIA,POR_ENVIAR,2026-02-16
+Atrapalo,eventos@atrapalo.com,Director,MEDIA,POR_ENVIAR,2026-02-16
+Rumbo,info@rumbo.es,Director,MEDIA,POR_ENVIAR,2026-02-16
+Edreams,info@edreams.com,Director,MEDIA,POR_ENVIAR,2026-02-16
+Skyscanner,events@skyscanner.com,Director,MEDIA,POR_ENVIAR,2026-02-16
+Kayak,press@kayak.com,Director,MEDIA,POR_ENVIAR,2026-02-16
+Travelocity,info@travelocity.com,Director,MEDIA,POR_ENVIAR,2026-02-16
