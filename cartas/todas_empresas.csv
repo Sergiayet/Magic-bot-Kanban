@@ -1,0 +1,59 @@
+nombre,email,tipo,prioridad,estado,fecha_busqueda
+Eventos Create,info@eventoscreate.com,Agencia de eventos,ALTA,POR_ENVIAR,2026-02-16
+MK21,info@mk21.com,Agencia de eventos,ALTA,POR_ENVIAR,2026-02-16
+Grupo Oesía,info@grupo-oesia.com,Grupo empresarial,MEDIA,POR_ENVIAR,2026-02-16
+Grupo Sifuentes,info@gruposifuentes.com,Grupo empresarial,MEDIA,POR_ENVIAR,2026-02-16
+Clínica Rotger,info@clinicarotger.com,Clínica privada,MEDIA,POR_ENVIAR,2026-02-16
+Hospital Quirónsalud,eventos@quironsalud.es,Hospital privado,ALTA,POR_ENVIAR,2026-02-16
+Hospital Sanitas,eventos@sanitas.es,Hospital privado,ALTA,POR_ENVIAR,2026-02-16
+Clínica Md Anderson,eventos@mdanderson.es,Hospital oncológico,MEDIA,POR_ENVIAR,2026-02-16
+Grupo Hospiten,info@hospiten.com,Grupo hospitalario,MEDIA,POR_ENVIAR,2026-02-16
+Clínica Vatic,info@clinicavatic.com,Clínica estética,MEDIA,POR_ENVIAR,2026-02-16
+Clínica Mira,eventos@clinicamira.com,Clínica oftalmológica,MEDIA,POR_ENVIAR,2026-02-16
+Grupo Sorribes,info@sorribes.com,Concesionario,MEDIA,POR_ENVIAR,2026-02-16
+Grupo Ruiz Mateos,eventos@ruizmateos.com,Concesionario,MEDIA,POR_ENVIAR,2026-02-16
+Grupo Haedo,info@grupo-haedo.com,Concesionario,MEDIA,POR_ENVIAR,2026-02-16
+Grupo Rodilla,eventos@gruporodilla.com,Cadena restauración,MEDIA,POR_ENVIAR,2026-02-16
+Grupo Sakalo,info@sakalo.com,Grupo restauración,MEDIA,POR_ENVIAR,2026-02-16
+Grupo Tragaluz,eventos@grupotragaluz.com,Grupo restauración,MEDIA,POR_ENVIAR,2026-02-16
+Grupo Damm,eventos@grupodamm.com,Alimentación,ALTA,POR_ENVIAR,2026-02-16
+Grupo Mahou,eventos@mahou-sanmiguel.com,Alimentación,ALTA,POR_ENVIAR,2026-02-16
+Grupo ACS,eventos@acs.es,Construcción,ALTA,POR_ENVIAR,2026-02-16
+Grupo Ferrovial,eventos@ferrovial.com,Construcción,ALTA,POR_ENVIAR,2026-02-16
+Grupo Sacyr,eventos@sacyr.com,Construcción,ALTA,POR_ENVIAR,2026-02-16
+Grupo OHLA,eventos@ohla.es,Construcción,MEDIA,POR_ENVIAR,2026-02-16
+Grupo Acciona,eventos@acciona.com,Construcción,ALTA,POR_ENVIAR,2026-02-16
+Cuatrecasas,eventos@cuatrecasas.com,Despacho abogados,ALTA,POR_ENVIAR,2026-02-16
+Gómez-Acebo & Pombo,eventos@ga-p.com,Despacho abogados,ALTA,POR_ENVIAR,2026-02-16
+Uria Menéndez,eventos@uria.com,Despacho abogados,ALTA,POR_ENVIAR,2026-02-16
+Baker McKenzie,eventos@bakermckenzie.com,Despacho abogados,ALTA,POR_ENVIAR,2026-02-16
+EY Law,eventos@ey.com,Consultora,ALTA,POR_ENVIAR,2026-02-16
+KPMG,eventos@kpmg.es,Consultora,ALTA,POR_ENVIAR,2026-02-16
+Deloitte,eventos@deloitte.es,Consultora,ALTA,POR_ENVIAR,2026-02-16
+PWC,eventos@pwc.es,Consultora,ALTA,POR_ENVIAR,2026-02-16
+CaixaBank,eventos@caixabank.es,Banca,ALTA,POR_ENVIAR,2026-02-16
+Banco Sabadell,eventos@bancsabadell.com,Banca,ALTA,POR_ENVIAR,2026-02-16
+Bankinter,eventos@bankinter.com,Banca,ALTA,POR_ENVIAR,2026-02-16
+Abanca,eventos@abanca.es,Banca,MEDIA,POR_ENVIAR,2026-02-16
+Kutxabank,eventos@kutxabank.es,Banca,MEDIA,POR_ENVIAR,2026-02-16
+Mapfre,eventos@mapfre.com,Seguros,ALTA,POR_ENVIAR,2026-02-16
+AXA,eventos@axa.es,Seguros,ALTA,POR_ENVIAR,2026-02-16
+Allianz,eventos@allianz.es,Seguros,ALTA,POR_ENVIAR,2026-02-16
+Generali,eventos@generali.es,Seguros,MEDIA,POR_ENVIAR,2026-02-16
+Santalucia,eventos@santalucia.es,Seguros,MEDIA,POR_ENVIAR,2026-02-16
+Glovo,eventos@glovoapp.com,Startup tech,ALTA,POR_ENVIAR,2026-02-16
+Cabify,eventos@cabify.com,Startup tech,ALTA,POR_ENVIAR,2026-02-16
+Wallbox,events@wallbox.com,Startup tech,ALTA,POR_ENVIAR,2026-02-16
+Holaluz,eventos@holaluz.com,Startup tech,MEDIA,POR_ENVIAR,2026-02-16
+Factorial,events@factorialhr.com,Startup tech,MEDIA,POR_ENVIAR,2026-02-16
+Paycomet,eventos@paycomet.com,Fintech,MEDIA,POR_ENVIAR,2026-02-16
+Colonial,eventos@colonial.es,Inmobiliaria,ALTA,POR_ENVIAR,2026-02-16
+Merlin Properties,eventos@merlinproperties.com,Inmobiliaria,ALTA,POR_ENVIAR,2026-02-16
+Lar España,eventos@larespana.com,Inmobiliaria,MEDIA,POR_ENVIAR,2026-02-16
+Realia,eventos@realia.es,Inmobiliaria,MEDIA,POR_ENVIAR,2026-02-16
+Aedas Homes,eventos@aedashomes.com,Inmobiliaria,MEDIA,POR_ENVIAR,2026-02-16
+Naturgy,eventos@naturgy.com,Energía,ALTA,POR_ENVIAR,2026-02-16
+Repsol,eventos@repsol.com,Energía,ALTA,POR_ENVIAR,2026-02-16
+Iberdrola,eventos@iberdrola.com,Energía,ALTA,POR_ENVIAR,2026-02-16
+Endesa,eventos@endesa.com,Energía,ALTA,POR_ENVIAR,2026-02-16
+Cepsa,eventos@cepsa.com,Energía,MEDIA,POR_ENVIAR,2026-02-16
