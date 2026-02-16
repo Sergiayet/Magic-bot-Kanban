@@ -1,16 +1,33 @@
 nombre,email,cargo,prioridad,estado,fecha
-CPC Cultural Premium Connection,info@cpc-spain.com,Director,MEDIA,POR_ENVIAR,2026-02-16
-Art Factory,info@artfactory.es,Director,MEDIA,POR_ENVIAR,2026-02-16
-4U Artists,info@4uartists.com,Director,MEDIA,POR_ENVIAR,2026-02-16
-ShowTime Artists,info@showtimeartists.com,Director,MEDIA,POR_ENVIAR,2026-02-16
-Tot Art,info@totart.com,Director,MEDIA,POR_ENVIAR,2026-02-16
-Viajes El Corte Inglés,eventos@elcorteingles.com,Director,MEDIA,POR_ENVIAR,2026-02-16
-Logitravel,info@logitravel.com,Director,MEDIA,POR_ENVIAR,2026-02-16
-Bonadventure,info@bonadventure.com,Director,MEDIA,POR_ENVIAR,2026-02-16
-Exoticca,info@exoticca.com,Director,MEDIA,POR_ENVIAR,2026-02-16
-Atrapalo,eventos@atrapalo.com,Director,MEDIA,POR_ENVIAR,2026-02-16
-Rumbo,info@rumbo.es,Director,MEDIA,POR_ENVIAR,2026-02-16
-Edreams,info@edreams.com,Director,MEDIA,POR_ENVIAR,2026-02-16
-Skyscanner,events@skyscanner.com,Director,MEDIA,POR_ENVIAR,2026-02-16
-Kayak,press@kayak.com,Director,MEDIA,POR_ENVIAR,2026-02-16
-Travelocity,info@travelocity.com,Director,MEDIA,POR_ENVIAR,2026-02-16
+CPC Cultural Premium Connection,hola@cpc-spain.com,General,ALTA,POR_ENVIAR,2026-02-16
+CPC Cultural Premium Connection,contacto@cpc-spain.com,General,ALTA,POR_ENVIAR,2026-02-16
+CPC Cultural Premium Connection,info@cpcspain.com,General,ALTA,POR_ENVIAR,2026-02-16
+Art Factory,hola@artfactory.es,General,ALTA,POR_ENVIAR,2026-02-16
+Art Factory,contacto@artfactory.es,General,ALTA,POR_ENVIAR,2026-02-16
+Art Factory,info@artfactory.es,General,ALTA,POR_ENVIAR,2026-02-16
+4U Artists,hola@4uartists.com,General,ALTA,POR_ENVIAR,2026-02-16
+4U Artists,contacto@4uartists.com,General,ALTA,POR_ENVIAR,2026-02-16
+ShowTime Artists,hola@showtimeartists.com,General,ALTA,POR_ENVIAR,2026-02-16
+ShowTime Artists,contacto@showtimeartists.com,General,ALTA,POR_ENVIAR,2026-02-16
+Tot Art,hola@totart.com,General,ALTA,POR_ENVIAR,2026-02-16
+Tot Art,contacto@totart.com,General,ALTA,POR_ENVIAR,2026-02-16
+Viajes El Corte Inglés,viajes@elcorteingles.com,Eventos,ALTA,POR_ENVIAR,2026-02-16
+Viajes El Corte Inglés,corporativo@elcorteingles.com,Eventos,ALTA,POR_ENVIAR,2026-02-16
+Logitravel,prensa@logitravel.com,Prensa,ALTA,POR_ENVIAR,2026-02-16
+Logitravel,info@logitravel.com,General,ALTA,POR_ENVIAR,2026-02-16
+Atrápalo,prensa@atrapalo.com,Prensa,ALTA,POR_ENVIAR,2026-02-16
+Atrápalo,info@atrapalo.com,General,ALTA,POR_ENVIAR,2026-02-16
+Rumbo,info@rumbo.es,General,ALTA,POR_ENVIAR,2026-02-16
+Rumbo,prensa@rumbo.es,Prensa,ALTA,POR_ENVIAR,2026-02-16
+Skyscanner,press@skyscanner.com,Prensa,ALTA,POR_ENVIAR,2026-02-16
+Skyscanner,info@skyscanner.com,General,ALTA,POR_ENVIAR,2026-02-16
+Kayak,press@kayak.com,Prensa,ALTA,POR_ENVIAR,2026-02-16
+Kayak,support@kayak.com,Soporte,ALTA,POR_ENVIAR,2026-02-16
+Travelocity,contact@travelocity.com,General,ALTA,POR_ENVIAR,2026-02-16
+Travelocity,support@travelocity.com,Soporte,ALTA,POR_ENVIAR,2026-02-16
+eDreams,info@edreams.com,General,ALTA,POR_ENVIAR,2026-02-16
+eDreams,prensa@edreams.com,Prensa,ALTA,POR_ENVIAR,2026-02-16
+Bonadventure,info@bonadventure.com,General,ALTA,POR_ENVIAR,2026-02-16
+Bonadventure,contacto@bonadventure.com,General,ALTA,POR_ENVIAR,2026-02-16
+Exoticca,info@exoticca.com,General,ALTA,POR_ENVIAR,2026-02-16
+Exoticca,prensa@exoticca.com,Prensa,ALTA,POR_ENVIAR,2026-02-16
